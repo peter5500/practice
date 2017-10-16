@@ -13,6 +13,7 @@ public class MaximumDepth {
     }
 }
 
+//
 class MaximumDepth2 {
     private int depth;
 
