@@ -25,7 +25,7 @@ public class Postorder {
 }
 
 //Iterative
-class Postorder2{
+class Postorder2 {
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -37,22 +37,19 @@ class Postorder2{
         }
 
         stack.push(root);
-        while (!stack.empty() ){
+        while (!stack.empty()) {
             curr = stack.peek();
-            if (prev == null || prev.left != curr || prev.right != curr){
-                if (curr.left != null){
+            if (prev == null || prev.left != curr || prev.right != curr) {
+                if (curr.left != null) {
                     stack.push(curr.left);
-                }
-                else if (curr.right != null){
+                } else if (curr.right != null) {
                     stack.push(curr.right);
                 }
-            }
-            else if (curr.left == prev){
-                if (curr.right != null){
+            } else if (curr.left == prev) {
+                if (curr.right != null) {
                     stack.push(curr.right);
                 }
-            }
-            else {
+            } else {
                 result.add(curr.val);
                 stack.pop();
             }
@@ -60,4 +57,5 @@ class Postorder2{
         }
         return result;
 
+    }
 }
