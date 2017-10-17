@@ -9,8 +9,8 @@ public class isBalance {
         if (root == null){
             return 0;
         }
-        int right = check(root.left);
-        int left = check(root.right);
+        int right = check(root.right);
+        int left = check(root.left);
         if (right == -1 || left == -1 || Math.abs(left - right)>1){
             return -1;
         }
