@@ -22,7 +22,7 @@ public class treePath {
             paths.add(root.val+"->"+path);
         }
         if(paths.size() == 0){
-            paths.add(Integer.toString(root.val));
+            paths.add(Integer.toString(root.val)); //transfer type
         }
         return paths;
     }
