@@ -21,29 +21,28 @@ public class OrderTraverse {
      * @return: Level order a list of lists of integer
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List result = new ArrayList();
+        List result = new ArrayList<>();
 
         if (root == null){
             return result;
         }
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue <TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
         while (!queue.isEmpty()){
-            ArrayList<Integer> level = new ArrayList<>();
+            List<Integer> level = new ArrayList();
             int size = queue.size();
-            for (int i=0; i<size; i++){
-                TreeNode head = queue.poll();
-                level.add(head.val);
-                if (head.left != null){
-                    queue.offer(head.left);
+            for (int i = 0;i<size;i++){
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                if (node.left != null){
+                    queue.offer(node.left);
                 }
-                if (head.right != null){
-                    queue.offer(head.right);
+                if (node.right != null){
+                    queue.offer(node.right);
                 }
             }
             result.add(level);
-
         }
         return result;
 

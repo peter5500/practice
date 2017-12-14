@@ -1,22 +1,25 @@
 package BST;
 
+// traverse+Div
 public class MinSub {
-    public int subtreesum = Integer.MAX_VALUE;
-    private TreeNode subtree = null;
+    public TreeNode subtree = null;
+    public int treeSum = Integer.MAX_VALUE;
 
-    public TreeNode findSubtree(TreeNode root) {
+    public TreeNode findSub(TreeNode root){
         helper(root);
         return subtree;
     }
-    private int helper(TreeNode root){
+
+    public int helper(TreeNode root){
         if (root == null){
             return 0;
         }
-        int sum = helper(root.left) + helper(root.right) + root.val;
-        if (sum < subtreesum){
-            subtreesum = sum;
+        int sum = root.val + helper(root.left) + helper(root.right);
+        if (sum < treeSum){
+            treeSum = sum;
             subtree = root;
         }
-        return sum;
+        return treeSum;
     }
 }
+

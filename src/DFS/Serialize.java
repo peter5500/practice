@@ -19,6 +19,7 @@ public class Serialize {
             list.add(node.left);
             list.add(node.right);
         }
+
         while (list.get(list.size() - 1) == null) {
             list.remove(list.size() - 1);
         }
